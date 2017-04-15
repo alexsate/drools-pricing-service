@@ -10,18 +10,18 @@
 	<kie:kmodule id="kmodule1">
 		<kie:kbase name="pricing_g3_KBase" packages="br.com.drools.pricing.g3">
 			<kie:ksession name="Pricing_G3_KS" type="stateful">
-				<kie:consoleLogger/>
+				<kie:consoleLogger />
 			</kie:ksession>
 		</kie:kbase>
 	</kie:kmodule>
-	
-<!-- 	<kie:kmodule id="kmodule1"> -->
-<!-- 		<kie:kbase name="pricing_g3_KBase" packages="br.com.drools.pricing.g3_drl"> -->
-<!-- 			<kie:ksession name="Pricing_G3_KS" type="stateful"> -->
-<!-- 				<kie:consoleLogger/> -->
-<!-- 			</kie:ksession> -->
-<!-- 		</kie:kbase> -->
-<!-- 	</kie:kmodule> -->
+
+	<!-- <kie:kmodule id="kmodule1"> -->
+	<!-- <kie:kbase name="pricing_g3_KBase" packages="br.com.drools.pricing.g3_drl"> -->
+	<!-- <kie:ksession name="Pricing_G3_KS" type="stateful"> -->
+	<!-- <kie:consoleLogger/> -->
+	<!-- </kie:ksession> -->
+	<!-- </kie:kbase> -->
+	<!-- </kie:kmodule> -->
 
 	<bean id="kiePostProcessor"
 		class="org.kie.spring.annotations.KModuleAnnotationPostProcessor" />

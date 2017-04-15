@@ -20,6 +20,8 @@ public class PricingG3Controller {
 	@RequestMapping(value = "/flight", method = RequestMethod.POST)
 	public ResponseEntity<FlightG3> flight(@RequestBody FlightG3 flightG3) {
 		
+		System.out.println("POST method");
+		
 		pricingG3Service.flight(flightG3);
 		
 		return ResponseEntity.ok(flightG3);

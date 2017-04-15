@@ -24,9 +24,10 @@ public class PricingG3ServiceImpl implements PricingG3Service{
 
 		session.insert(flightG3);
 		
-		session.getAgenda().getAgendaGroup("milesConverter").setFocus();
-		session.getAgenda().getAgendaGroup("odConverter").setFocus();
-		
+	//	session.getAgenda().getAgendaGroup("milesConverter").setFocus();
+	//	session.getAgenda().getAgendaGroup("milesConverter_1").setFocus();
+	//	session.getAgenda().getAgendaGroup("odConverter").setFocus();
+		logger.debug("fireAllRules -- > : " + flightG3);
 		session.fireAllRules();
 		
 		logger.debug("Flight post fire: " + flightG3);
