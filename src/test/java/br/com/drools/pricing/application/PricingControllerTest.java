@@ -60,7 +60,7 @@ public class PricingControllerTest {
 		controller.flight(flightG3);
 		
 		assertThat(flightG3.getPrecoMilhas() != null);
-		Assert.assertTrue("Preco em milhas is 44444", flightG3.getPrecoMilhas() == 222);
+		Assert.assertTrue("Preco em milhas is 333", flightG3.getPrecoMilhas() == 333);
 		
 	}
 	
@@ -73,7 +73,7 @@ public class PricingControllerTest {
 		controller.flight(flightG3);
 		
 		assertThat(flightG3.getPrecoMilhas() != null);
-		Assert.assertTrue("Preco em milhas is 111", flightG3.getPrecoMilhas() == 111);
+		Assert.assertTrue("Preco em milhas is 222", flightG3.getPrecoMilhas() == 222);
 		
 	}
 	
@@ -86,7 +86,7 @@ public class PricingControllerTest {
 		controller.flight(flightG3);
 		
 		assertThat(flightG3.getPrecoMilhas() != null);
-		Assert.assertTrue("Preco em milhas is 333", flightG3.getPrecoMilhas() == 333);
+		Assert.assertTrue("Preco em milhas is 444", flightG3.getPrecoMilhas() == 444);
 		
 	}
 	

@@ -2,6 +2,7 @@ package br.com.drools.pricing.service.impl;
 
 import org.kie.api.cdi.KSession;
 import org.kie.api.runtime.KieSession;
+import org.kie.api.runtime.rule.FactHandle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -19,16 +20,22 @@ public class PricingG3ServiceImpl implements PricingG3Service{
 
 	@Override
 	public void flight(FlightG3 flightG3) {
-		
 		logger.debug("Flight received: " + flightG3);
 
-		session.insert(flightG3);
+		// put the fact on working memory, but save the handle to remove the fact after fire All Rules
+		FactHandle handle = session.insert(flightG3);
 		
-	//	session.getAgenda().getAgendaGroup("milesConverter").setFocus();
-	//	session.getAgenda().getAgendaGroup("milesConverter_1").setFocus();
-	//	session.getAgenda().getAgendaGroup("odConverter").setFocus();
-		logger.debug("fireAllRules -- > : " + flightG3);
+		session.getAgenda().getAgendaGroup("Agenda01").setFocus();
 		session.fireAllRules();
+		session.getAgenda().getAgendaGroup("Agenda02").setFocus();
+		session.fireAllRules();
+		session.getAgenda().getAgendaGroup("Agenda03").setFocus();
+		session.fireAllRules();
+		session.getAgenda().getAgendaGroup("Agenda04").setFocus();
+		session.fireAllRules();
+		
+		// use the handle to remove the fact at working memory
+		session.delete(handle);
 		
 		logger.debug("Flight post fire: " + flightG3);
 	}
